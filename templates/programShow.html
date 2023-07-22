@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'Nirusan_CareerDisplay.css' )}}"> 
+  <meta http-equiv="X-UA-Compatible" con tent="ie=edge">
+  <!-- The tital argument which got passed inside the return method will come here -->
+  <!-- If there is a title then this will get print -->
+    {% if title %}
+      <title>Flask Blog - {{ title }}</title>
+
+      <!-- If there is no title then it will get print -->
+    {% else %}
+      <title>Flask Blog</title>
+    {% endif %}
+</head>
+
+<body>
+
+  <h1>
+    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/logo2.png') }}" 
+        style="width: 150px; border-radius: 30px; float: left; margin-top: 10px; margin-left: 10px;"  alt="iit-logo"></a>
+    <span style="position: relative; right: 100px; top: 10px;">Results</span> 
+  </h1>
+    <!-- Creating a for loop and sharing information which in the python dictonary to html -->
+    <table>
+      <tr>
+        <th>Program</th>
+        <th>Interest code</th>
+      </tr>
+    {% for post in interest_code_program %}
+          <tr>
+            <td>{{post.Programs}}</td>
+            <td>{{post.Interest_Code}}</td>
+          </tr>
+    {% endfor %}
+  </table>
+
+</body>
+</html>
