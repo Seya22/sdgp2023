@@ -5,7 +5,7 @@ import csv
 
 app = Flask(__name__)
 
-cluster = MongoClient("mongodb+srv://sdgp2023:sdgp2023@cluster0.gawdaud.mongodb.net/?retryWrites=true&w=majority")
+cluster = MongoClient("mongodb+srv://seyara22:seyara22@cluster0.bydksw5.mongodb.net/?retryWrites=true&w=majority")
 database = cluster["Sdgp_Test"]
 collection = database["career"]
 collection_Signup = database["signUp"]
